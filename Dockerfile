@@ -12,6 +12,7 @@ RUN set -euxo pipefail; \
     # Google Cloud SDK requirements
     apk update; \
     apk add python3=3.8.8-r0; \
+    apk add openssh; \
     #
     # Install Google Cloud SDK
     wget -O $GOOGLE_CLOUD_SDK_FILE $GOOGLE_CLOUD_SDK_URL; \
