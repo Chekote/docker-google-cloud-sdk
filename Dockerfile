@@ -3,8 +3,7 @@
 FROM chekote/alpine:latest
 
 ENV GOOGLE_CLOUD_SDK_VERSION=367.0.0
-ENV GOOGLE_CLOUD_SDK_FILE=/root/google-cloud-sdk-${GOOGLE_CLOUD_SDK_VERSION}-linux-x86_64.tar.gz
-ENV GOOGLE_CLOUD_SDK_URL=https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GOOGLE_CLOUD_SDK_VERSION}-linux-x86_64.tar.gz
+ENV GOOGLE_CLOUD_SDK_URL_PREFIX=https://dl.google.com/dl/cloudsdk/channels/rapid/downloads
 
 ENV PATH /google-cloud-sdk/bin:$PATH
 
@@ -14,6 +13,9 @@ RUN set -euxo pipefail; \
     apk update; \
     apk add python3; \
     #
+    # Assign SDK to download for this architecture
+    GOOGLE_CLOUD_SDK_FILE=google-cloud-sdk-${GOOGLE_CLOUD_SDK_VERSION}-linux-$(arch).tar.gz; \
+    #
     # Install Google Cloud SDK
-    wget -O $GOOGLE_CLOUD_SDK_FILE $GOOGLE_CLOUD_SDK_URL; \
+    wget -O $GOOGLE_CLOUD_SDK_FILE $GOOGLE_CLOUD_SDK_URL_PREFIX/$GOOGLE_CLOUD_SDK_FILE; \
     tar -xvzf $GOOGLE_CLOUD_SDK_FILE -C /;
