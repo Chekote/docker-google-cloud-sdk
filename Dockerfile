@@ -18,4 +18,7 @@ RUN set -euxo pipefail; \
     #
     # Install Google Cloud SDK
     wget -O $GOOGLE_CLOUD_SDK_FILE $GOOGLE_CLOUD_SDK_URL_PREFIX/$GOOGLE_CLOUD_SDK_FILE; \
-    tar -xvzf $GOOGLE_CLOUD_SDK_FILE -C /;
+    tar -xvzf $GOOGLE_CLOUD_SDK_FILE -C /; \
+    #
+    # Cleanup
+    rm $GOOGLE_CLOUD_SDK_FILE;
