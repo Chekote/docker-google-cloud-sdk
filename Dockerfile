@@ -1,4 +1,5 @@
-# chekote/google-cloud-sdk
+# chekote/google-cloud-sdk:latest
+# chekote/google-cloud-sdk:$GOOGLE_CLOUD_SDK_VERSION
 FROM chekote/alpine:latest
 
 ENV GOOGLE_CLOUD_SDK_VERSION=367.0.0
