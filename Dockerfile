@@ -1,5 +1,5 @@
 # chekote/google-cloud-sdk
-FROM chekote/alpine:3.13.2
+FROM chekote/alpine:latest
 
 ENV GOOGLE_CLOUD_SDK_VERSION=336.0.0
 ENV GOOGLE_CLOUD_SDK_FILE=/root/google-cloud-sdk-${GOOGLE_CLOUD_SDK_VERSION}-linux-x86_64.tar.gz
