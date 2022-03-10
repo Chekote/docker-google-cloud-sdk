@@ -4,7 +4,7 @@
 # us.gcr.io/chekote-56995/google-cloud-sdk:$GOOGLE_CLOUD_SDK_VERSION
 FROM chekote/alpine:latest
 
-ENV GOOGLE_CLOUD_SDK_VERSION=376.0.0
+ENV GOOGLE_CLOUD_SDK_VERSION=375.0.0
 ENV GOOGLE_CLOUD_SDK_URL_PREFIX=https://dl.google.com/dl/cloudsdk/channels/rapid/downloads
 
 ENV PATH "/google-cloud-sdk/bin:$PATH"
