@@ -26,4 +26,9 @@ RUN set -euxo pipefail; \
     tar -xvzf "$GOOGLE_CLOUD_SDK_FILE" -C /; \
     #
     # Cleanup
-    rm "$GOOGLE_CLOUD_SDK_FILE";
+    rm "$GOOGLE_CLOUD_SDK_FILE"; \
+    #
+    # Make sure everything works
+    python3 --version; \
+    gcloud --version; \
+    gsutil --version;
