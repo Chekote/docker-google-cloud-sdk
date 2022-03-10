@@ -15,8 +15,11 @@ RUN set -euxo pipefail; \
     apk update; \
     apk add python3; \
     #
+    # Determine the system architecture
+    ARCH="$(arch | sed -r 's/(aarch64|armv7l)/arm/')"; \
+    #
     # Assign SDK to download for this architecture
-    GOOGLE_CLOUD_SDK_FILE=google-cloud-sdk-${GOOGLE_CLOUD_SDK_VERSION}-linux-$(arch).tar.gz; \
+    GOOGLE_CLOUD_SDK_FILE=google-cloud-sdk-${GOOGLE_CLOUD_SDK_VERSION}-linux-$ARCH.tar.gz; \
     #
     # Install Google Cloud SDK
     wget -O $GOOGLE_CLOUD_SDK_FILE $GOOGLE_CLOUD_SDK_URL_PREFIX/$GOOGLE_CLOUD_SDK_FILE; \
