@@ -5,7 +5,7 @@ FROM chekote/alpine:latest
 ENV GOOGLE_CLOUD_SDK_VERSION=484.0.0
 ENV GOOGLE_CLOUD_SDK_URL_PREFIX=https://dl.google.com/dl/cloudsdk/channels/rapid/downloads
 
-ENV PATH "/google-cloud-sdk/bin:$PATH"
+ENV PATH="/google-cloud-sdk/bin:$PATH"
 
 RUN set -euxo pipefail; \
     #
