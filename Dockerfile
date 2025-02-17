@@ -1,5 +1,6 @@
 # chekote/google-cloud-sdk:latest
 # chekote/google-cloud-sdk:$GOOGLE_CLOUD_SDK_VERSION
+# chekote/google-cloud-sdk:$GOOGLE_CLOUD_SDK_VERSION-$(date '+%Y-%m-%d-%H-%M-%S')
 FROM chekote/alpine:latest
 
 ENV GOOGLE_CLOUD_SDK_VERSION=510.0.0
